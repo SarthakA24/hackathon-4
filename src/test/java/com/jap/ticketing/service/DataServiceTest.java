@@ -2,6 +2,7 @@ package com.jap.ticketing.service;
 
 import com.jap.ticketing.model.Ticket;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +27,10 @@ class DataServiceTest {
     }
 
     @Test
-    void sortByDistance() {
+    void sortByDistanceSuccess() {
+        List<Ticket> sortedTicketList = dataService.sortByDistance(ticketList);
+        Assertions.assertEquals(49, sortedTicketList.size(), "There is some error in the logic!!");
+        Assertions.assertEquals(49.5, sortedTicketList.get(0).getTravelledKilometer(), "There is some error in the logic!!");
     }
 
     @Test
