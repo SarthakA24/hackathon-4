@@ -10,8 +10,6 @@ import java.util.List;
 
 class FileReaderServiceTest {
     FileReaderService fileReaderService;
-    private final String FILENAME = "src/test/resources/sample.csv";
-    private final String INCORRECT_FILENAME = "src/test/resources/sample1.csv";
 
     @BeforeEach
     void setUp() {
@@ -25,7 +23,8 @@ class FileReaderServiceTest {
 
     @Test
     void readFileSuccess() {
-        List<Ticket> ticketList = fileReaderService.readFile(FILENAME);
+        String fileName = "src/test/resources/sample.csv";
+        List<Ticket> ticketList = fileReaderService.readFile(fileName);
         Ticket ticket = new Ticket(
                 "KIAS-12/5",
                 "KIAS-12UP",
@@ -39,5 +38,10 @@ class FileReaderServiceTest {
                 49.3
         );
         Assertions.assertEquals(ticket, ticketList.get(0), "There is some error in the logic!!");
+    }
+
+    @Test
+    void readFileFailure() {
+        Assertions.assertThrows(RuntimeException.class, () -> fileReaderService.readFile("src/test/resources/sample1.csv"));
     }
 }
