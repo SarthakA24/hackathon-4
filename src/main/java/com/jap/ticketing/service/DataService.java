@@ -7,12 +7,7 @@ import java.util.List;
 
 public class DataService {
     public List<Ticket> sortByDistance (List<Ticket> ticketList) {
-        ticketList.sort(new Comparator<Ticket>() {
-            @Override
-            public int compare(Ticket o1, Ticket o2) {
-                return Double.compare(o2.getTravelledKilometer(),o1.getTravelledKilometer());
-            }
-        });
+        ticketList.sort(Comparator.comparingDouble(Ticket::getTravelledKilometer).reversed());
         return ticketList;
     }
 }
