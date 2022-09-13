@@ -11,7 +11,7 @@ import java.util.List;
 class FileReaderServiceTest {
     FileReaderService fileReaderService;
     private final String FILENAME = "src/test/resources/sample.csv";
-    private final String INCORRECT_FILENAME = "";
+    private final String INCORRECT_FILENAME = "src/test/resources/sample1.csv";
 
     @BeforeEach
     void setUp() {
