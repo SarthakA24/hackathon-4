@@ -19,9 +19,8 @@ public class FileReaderService {
     public List<Ticket> readFile(String fileName) {
         List<Ticket> ticketList = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
-            String readLine = bufferedReader.readLine();
-            while ((readLine = bufferedReader.readLine()) != null) {
-                String[] data = readLine.split(",");
+            String header = bufferedReader.readLine();
+            bufferedReader.lines().map(readLine -> readLine.split(",")).forEach(data -> {
                 String scheduleNumber = data[0].trim();
                 String routeNumber = data[1].trim();
                 int ticketFromStopId = Integer.parseInt(data[2]);
@@ -34,7 +33,7 @@ public class FileReaderService {
                 double travelledKilometer = Double.parseDouble(data[9]);
                 Ticket ticket = new Ticket(scheduleNumber, routeNumber, ticketFromStopId, ticketFromStopSequenceNumber, ticketTillStopId, ticketTillStopSequenceNumber, ticketDate, ticketTime, totalTicketAmount, travelledKilometer);
                 ticketList.add(ticket);
-            }
+            });
         } catch (IOException exception) {
             System.err.println(exception.getMessage());
         }
