@@ -42,7 +42,25 @@ class DataServiceTest {
     }
 
     @Test
-    void totalCollectionMadeByTicketSales() {
+    void totalCollectionMadeByTicketSalesSuccess() {
         Assertions.assertEquals(10348.0, dataService.totalCollectionMadeByTicketSales(ticketList));
+    }
+
+    @Test
+    void totalCollectionMadeByTicketSalesFailure() {
+        List<Ticket> tickets = new ArrayList<>();
+        tickets.add(new Ticket(
+                "KIAS-12/5",
+                "KIAS-12UP",
+                9387,
+                1,
+                11359,
+                39,
+                "01/09/2018",
+                "02:02:58",
+                281.0,
+                49.3));
+        tickets.add(null);
+        Assertions.assertThrows(NullPointerException.class, () -> dataService.sortByDistance(tickets));
     }
 }
