@@ -10,4 +10,9 @@ public class DataService {
         ticketList.sort(Comparator.comparingDouble(Ticket::getTravelledKilometer).reversed());
         return ticketList;
     }
+
+    public double totalCollectionMadeByTicketSales(List<Ticket> ticketList){
+        double totalCollection = 0;
+        return totalCollection;
+    }
 }
