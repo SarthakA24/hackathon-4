@@ -21,17 +21,17 @@ public class FileReaderService {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
             String header = bufferedReader.readLine();
             bufferedReader.lines().map(readLine -> readLine.split(",")).forEach(data -> {
-                String scheduleNumber = data[0].trim();
-                String routeNumber = data[1].trim();
-                int ticketFromStopId = Integer.parseInt(data[2]);
-                int ticketFromStopSequenceNumber = Integer.parseInt(data[3]);
-                int ticketTillStopId = Integer.parseInt(data[4]);
-                int ticketTillStopSequenceNumber = Integer.parseInt(data[5]);
-                String ticketDate = data[6].trim();
-                String ticketTime = data[7].trim();
-                double totalTicketAmount = Double.parseDouble(data[8]);
-                double travelledKilometer = Double.parseDouble(data[9]);
-                Ticket ticket = new Ticket(scheduleNumber, routeNumber, ticketFromStopId, ticketFromStopSequenceNumber, ticketTillStopId, ticketTillStopSequenceNumber, ticketDate, ticketTime, totalTicketAmount, travelledKilometer);
+                Ticket ticket = new Ticket();
+                ticket.setScheduleNumber(data[0].trim());
+                ticket.setRouteNumber(data[1].trim());
+                ticket.setTicketFromStopId(Integer.parseInt(data[2]));
+                ticket.setTicketFromStopSequenceNumber(Integer.parseInt(data[3]));
+                ticket.setTicketTillStopId(Integer.parseInt(data[4]));
+                ticket.setTicketTillStopSequenceNumber(Integer.parseInt(data[5]));
+                ticket.setTicketDate(data[6].trim());
+                ticket.setTicketTime(data[7].trim());
+                ticket.setTotalTicketAmount(Double.parseDouble(data[8]));
+                ticket.setTravelledKilometer(Double.parseDouble(data[9]));
                 ticketList.add(ticket);
             });
         } catch (IOException exception) {
