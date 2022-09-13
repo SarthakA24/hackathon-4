@@ -19,6 +19,6 @@ class FileReaderServiceTest {
     }
 
     @Test
-    void readFile() {
+    void readFileSuccess() {
     }
 }
