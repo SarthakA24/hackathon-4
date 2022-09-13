@@ -22,5 +22,9 @@ public class Hello {
         dataService.sortByDistance(ticketList);
         // Print the sorted list
         ticketList.forEach(System.out::println);
+        // Call the method find the total collection made by ticket sales
+        double collectionMadeByTicketSales = dataService.totalCollectionMadeByTicketSales(ticketList);
+        // Print the total collection made by the ticket sales
+        System.out.println("Total Collection made by the Ticket Sales is  $" + collectionMadeByTicketSales);
     }
 }
