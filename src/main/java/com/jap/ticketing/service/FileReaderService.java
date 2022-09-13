@@ -10,7 +10,7 @@ import java.util.List;
 
 public class FileReaderService {
 
-    public List<Ticket> readFile (String fileName) {
+    public List<Ticket> readFile(String fileName) {
         List<Ticket> ticketList = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
             String readLine = bufferedReader.readLine();
@@ -26,18 +26,7 @@ public class FileReaderService {
                 String ticketTime = data[7].trim();
                 double totalTicketAmount = Double.parseDouble(data[8]);
                 double travelledKilometer = Double.parseDouble(data[9]);
-                Ticket ticket = new Ticket(
-                        scheduleNumber,
-                        routeNumber,
-                        ticketFromStopId,
-                        ticketFromStopSequenceNumber,
-                        ticketTillStopId,
-                        ticketTillStopSequenceNumber,
-                        ticketDate,
-                        ticketTime,
-                        totalTicketAmount,
-                        travelledKilometer
-                );
+                Ticket ticket = new Ticket(scheduleNumber, routeNumber, ticketFromStopId, ticketFromStopSequenceNumber, ticketTillStopId, ticketTillStopSequenceNumber, ticketDate, ticketTime, totalTicketAmount, travelledKilometer);
                 ticketList.add(ticket);
             }
         } catch (IOException exception) {
