@@ -24,10 +24,6 @@ public class DataService {
      * @return the total collection made by sales of tickets
      */
     public double totalCollectionMadeByTicketSales(List<Ticket> ticketList) {
-        double totalCollection = 0;
-        for (Ticket ticket : ticketList) {
-            totalCollection += ticket.getTotalTicketAmount();
-        }
-        return totalCollection;
+        return ticketList.stream().mapToDouble(Ticket::getTotalTicketAmount).sum();
     }
 }
