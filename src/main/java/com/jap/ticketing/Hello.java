@@ -22,12 +22,12 @@ public class Hello {
         System.out.println("--------------------");
         ticketList.forEach(System.out::println);
         // Call the sortByDistance() method to sort the list based on distance
-        dataService.sortByDistance(ticketList);
+        List<Ticket> sortedTicketList = dataService.sortByDistance(ticketList);
         // Print the sorted list
         System.out.println("--------------------");
         System.out.println("Tickets Data sorted based on Distance Travelled - ");
         System.out.println("--------------------");
-        ticketList.forEach(System.out::println);
+        sortedTicketList.forEach(System.out::println);
         System.out.println("--------------------");
         // Call the method find the total collection made by ticket sales
         double collectionMadeByTicketSales = dataService.totalCollectionMadeByTicketSales(ticketList);
