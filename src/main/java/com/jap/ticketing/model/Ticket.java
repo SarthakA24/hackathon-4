@@ -125,6 +125,16 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" + "scheduleNumber='" + scheduleNumber + '\'' + ", routeNumber='" + routeNumber + '\'' + ", ticketFromStopId=" + ticketFromStopId + ", ticketFromStopSequenceNumber=" + ticketFromStopSequenceNumber + ", ticketTillStopId=" + ticketTillStopId + ", ticketTillStopSequenceNumber=" + ticketTillStopSequenceNumber + ", ticketDate='" + ticketDate + '\'' + ", ticketTime='" + ticketTime + '\'' + ", totalTicketAmount=" + totalTicketAmount + ", travelledKilometer=" + travelledKilometer + '}';
+        return "------------------------------\n"
+                + "Schedule Number - " + scheduleNumber + "\n"
+                + "Route Number - " + routeNumber + "\n"
+                + "Ticket From Stop Id - " + ticketFromStopId + "\n"
+                + "Ticket From Stop Sequence Number - " + ticketFromStopSequenceNumber + "\n"
+                + "Ticket Till Stop Id - " + ticketTillStopId + "\n"
+                + "Ticket Till Stop Sequence Number - " + ticketTillStopSequenceNumber + "\n"
+                + "Ticket Date - " + ticketDate + "\n"
+                + "Ticket Time - " + ticketTime + "\n"
+                + "Total Ticket Amount - " + totalTicketAmount + "\n"
+                + "Travelled Kilometer - " + travelledKilometer;
     }
 }
