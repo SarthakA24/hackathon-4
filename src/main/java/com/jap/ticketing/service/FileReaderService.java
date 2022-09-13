@@ -19,7 +19,7 @@ public class FileReaderService {
     public List<Ticket> readFile(String fileName) {
         List<Ticket> ticketList = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
-            String header = bufferedReader.readLine();
+            bufferedReader.readLine();
             bufferedReader.lines().map(readLine -> readLine.split(",")).forEach(data -> {
                 Ticket ticket = new Ticket();
                 ticket.setScheduleNumber(data[0].trim());
