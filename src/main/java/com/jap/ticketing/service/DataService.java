@@ -17,6 +17,11 @@ public class DataService {
         return ticketList;
     }
 
+    /**
+     * This method finds the total amount collected by the ticket sales
+     * @param ticketList The Tickets List for which the total needs to be calculated
+     * @return the total collection made by sales of tickets
+     */
     public double totalCollectionMadeByTicketSales(List<Ticket> ticketList){
         double totalCollection = 0;
         return totalCollection;
