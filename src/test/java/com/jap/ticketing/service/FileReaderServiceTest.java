@@ -40,4 +40,9 @@ class FileReaderServiceTest {
         );
         Assertions.assertEquals(ticket, ticketList.get(0), "File has been Read Successfully!");
     }
+
+    @Test
+    void readFileFailure() {
+
+    }
 }
