@@ -35,5 +35,6 @@ class DataServiceTest {
 
     @Test
     void totalCollectionMadeByTicketSales() {
+        Assertions.assertEquals(10348.0, dataService.totalCollectionMadeByTicketSales(ticketList));
     }
 }
