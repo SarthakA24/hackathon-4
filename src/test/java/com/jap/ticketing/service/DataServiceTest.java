@@ -28,9 +28,8 @@ class DataServiceTest {
 
     @Test
     void sortByDistanceSuccess() {
-        List<Ticket> sortedTicketList = dataService.sortByDistance(ticketList);
-        Assertions.assertEquals(49, sortedTicketList.size(), "There is some error in the logic!!");
-        Assertions.assertEquals(49.5, sortedTicketList.get(0).getTravelledKilometer(), "There is some error in the logic!!");
+        Assertions.assertEquals(49, dataService.sortByDistance(ticketList).size(), "There is some error in the logic!!");
+        Assertions.assertEquals(49.5, dataService.sortByDistance(ticketList).get(0).getTravelledKilometer(), "There is some error in the logic!!");
     }
 
     @Test
