@@ -3,6 +3,7 @@ package com.jap.ticketing.service;
 import com.jap.ticketing.model.Ticket;
 
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 public class DataService {
@@ -24,6 +25,9 @@ public class DataService {
      */
     public double totalCollectionMadeByTicketSales(List<Ticket> ticketList){
         double totalCollection = 0;
+        for (Ticket ticket : ticketList) {
+            totalCollection += ticket.getTotalTicketAmount();
+        }
         return totalCollection;
     }
 }
