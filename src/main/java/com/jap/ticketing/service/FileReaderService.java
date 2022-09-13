@@ -10,6 +10,12 @@ import java.util.List;
 
 public class FileReaderService {
 
+    /**
+     * This method reads the CSV file data into a List of Tickets
+     *
+     * @param fileName The file path which need to be read
+     * @return The List of Tickets containing the data from the file
+     */
     public List<Ticket> readFile(String fileName) {
         List<Ticket> ticketList = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(fileName))) {
