@@ -2,7 +2,6 @@ package com.jap.ticketing.service;
 
 import com.jap.ticketing.model.Ticket;
 
-import java.util.Comparator;
 import java.util.List;
 
 public class DataService {
@@ -14,7 +13,7 @@ public class DataService {
      * @return The sorted Ticket List
      */
     public List<Ticket> sortByDistance(List<Ticket> ticketList) {
-        ticketList.sort(Comparator.comparingDouble(Ticket::getTravelledKilometer).reversed());
+        ticketList.sort((DistanceComparator) (o1, o2) -> Double.compare(o1.getTravelledKilometer(), o2.getTravelledKilometer()));
         return ticketList;
     }
 
