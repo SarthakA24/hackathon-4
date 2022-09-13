@@ -30,11 +30,6 @@ class FileReaderServiceTest {
     }
 
     @Test
-    void readFileFailure() {
-        Assertions.assertThrows(RuntimeException.class, () -> fileReaderService.readFile("src/test/resources/sample1.csv"));
-    }
-
-    @Test
     void readFileFailureWithIncorrectEntries() {
         Assertions.assertThrows(NumberFormatException.class, () -> fileReaderService.readFile("src/test/resources/sample_values_changed.csv"));
     }

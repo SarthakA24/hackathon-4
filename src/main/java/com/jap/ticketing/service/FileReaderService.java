@@ -35,7 +35,7 @@ public class FileReaderService {
                 ticketList.add(ticket);
             });
         } catch (IOException exception) {
-            throw new RuntimeException(exception);
+            System.err.println(exception.getMessage());
         }
         return ticketList;
     }
