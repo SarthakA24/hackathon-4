@@ -13,7 +13,7 @@ public class DataService {
      * @return The sorted Ticket List
      */
     public List<Ticket> sortByDistance(List<Ticket> ticketList) {
-        ticketList.sort((DistanceComparator) (o1, o2) -> Double.compare(o1.getTravelledKilometer(), o2.getTravelledKilometer()));
+        ticketList.sort((DistanceComparator) (o1, o2) -> Double.compare(o2.getTravelledKilometer(), o1.getTravelledKilometer()));
         return ticketList;
     }
 
