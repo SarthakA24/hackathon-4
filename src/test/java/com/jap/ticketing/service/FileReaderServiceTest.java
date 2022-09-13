@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 
 class FileReaderServiceTest {
     FileReaderService fileReaderService;
+    private final String FILENAME = "src/test/resources/sample.csv";
 
     @BeforeEach
     void setUp() {
         fileReaderService = new FileReaderService();
-        String fileName = "src/test/resources/sample.csv";
     }
 
     @AfterEach
