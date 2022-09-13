@@ -29,14 +29,25 @@ class DataServiceTest {
 
     @Test
     void sortByDistanceSuccess() {
-        Assertions.assertEquals(49, dataService.sortByDistance(ticketList).size(), "There is some error in the logic!!");
-        Assertions.assertEquals(49.5, dataService.sortByDistance(ticketList).get(0).getTravelledKilometer(), "There is some error in the logic!!");
+        Assertions.assertEquals(49, dataService.sortByDistance(ticketList).size(),
+                "There is some error in the logic!!");
+        Assertions.assertEquals(49.5, dataService.sortByDistance(ticketList).get(0).getTravelledKilometer(),
+                "There is some error in the logic!!");
     }
 
     @Test
     void sortByDistanceFailure() {
         List<Ticket> tickets = new ArrayList<>();
-        tickets.add(new Ticket("KIAS-12/5", "KIAS-12UP", 9387, 1, 11359, 39, "01/09/2018", "02:02:58", 281.0, 49.3));
+        tickets.add(new Ticket("KIAS-12/5",
+                "KIAS-12UP",
+                9387,
+                1,
+                11359,
+                39,
+                "01/09/2018",
+                "02:02:58",
+                281.0,
+                49.3));
         tickets.add(null);
         Assertions.assertThrows(NullPointerException.class, () -> dataService.sortByDistance(tickets));
     }
@@ -49,7 +60,16 @@ class DataServiceTest {
     @Test
     void totalCollectionMadeByTicketSalesFailure() {
         List<Ticket> tickets = new ArrayList<>();
-        tickets.add(new Ticket("KIAS-12/5", "KIAS-12UP", 9387, 1, 11359, 39, "01/09/2018", "02:02:58", 281.0, 49.3));
+        tickets.add(new Ticket("KIAS-12/5",
+                "KIAS-12UP",
+                9387,
+                1,
+                11359,
+                39,
+                "01/09/2018",
+                "02:02:58",
+                281.0,
+                49.3));
         tickets.add(null);
         Assertions.assertThrows(NullPointerException.class, () -> dataService.sortByDistance(tickets));
     }
