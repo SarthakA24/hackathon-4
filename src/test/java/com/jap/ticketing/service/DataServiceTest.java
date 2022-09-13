@@ -49,7 +49,7 @@ class DataServiceTest {
                 49.3
         ));
         tickets.add(null);
-        Assertions.assertThrows(RuntimeException.class, () -> dataService.sortByDistance(tickets));
+        Assertions.assertThrows(NullPointerException.class, () -> dataService.sortByDistance(tickets));
     }
 
     @Test
